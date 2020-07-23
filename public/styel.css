@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #242424;
+  color: azure;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+h1,
+h2 {
+  text-shadow: -0.06em 0 0 red, 0.06em 0 0 cyan;
+}
+
+#root {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 20px 50px;
+}
+
+button {
+  cursor: pointer;
+}

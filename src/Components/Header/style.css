@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  padding: 10px 10px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.reserva {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.reserva div {
+  text-align: right;
+  margin-right: 10px;
+  line-height: 25px;
+}
+
+.reserva strong {
+  color: rgb(247, 44, 206);
+  display: block;
+}
+
+.reserva span {
+  color: rgb(25, 236, 236);
+}
