@@ -1,0 +1,32 @@
+.title {
+  color: cornsilk;
+}
+
+.reservas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: rgb(56, 53, 53);
+  border-radius: 4px;
+}
+
+.reservas img {
+  height: 100px;
+  background-color: rgb(56, 53, 53);
+}
+
+.reservas button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgb(253, 21, 90);
+}
+
+footer button {
+  text-align: center;
+}
+footer button span {
+  margin: 0;
+}

@@ -20,7 +20,7 @@ img {
   background-color: rgb(56, 53, 53);
   border-radius: 4px;
   padding: 13px;
-  justify-content: center;
+  justify-content: left;
   box-shadow: 3px 3px 1px rgb(65, 65, 65);
 }
 
