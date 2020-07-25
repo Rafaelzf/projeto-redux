@@ -1,6 +1,7 @@
 import { createStore } from "redux";
-import reducer from "./modules/reservas/reducer";
 
-const store = createStore(reducer);
+import rootReducer from "./modules/rootReducers";
+
+const store = createStore(rootReducer);
 
 export default store;

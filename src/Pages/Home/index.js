@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import api from "../../Services/api";
 import { RiServiceLine } from "react-icons/ri";
 import "./style.css";
 
 export default function Home() {
+  const dispach = useDispatch();
   const [trips, setTrips] = useState([]);
 
   useEffect(() => {
@@ -14,6 +16,13 @@ export default function Home() {
 
     loadApi();
   }, []);
+
+  const addTrip = (trip) => {
+    dispach({
+      type: "ADD_RESERVE",
+      trip,
+    });
+  };
 
   return (
     <>
@@ -26,7 +35,7 @@ export default function Home() {
 
               <strong>{element.title}</strong>
               <span>{!!element.status ? "Disponível" : "Indinsponível"}</span>
-              <button type="button" onClick={() => {}}>
+              <button type="button" onClick={() => addTrip(trips)}>
                 <RiServiceLine size={16} color="cornsilk" />
                 <span>solicitar reserva</span>
               </button>
