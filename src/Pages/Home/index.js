@@ -35,7 +35,7 @@ export default function Home() {
 
               <strong>{element.title}</strong>
               <span>{!!element.status ? "Disponível" : "Indinsponível"}</span>
-              <button type="button" onClick={() => addTrip(trips)}>
+              <button type="button" onClick={() => addTrip(element)}>
                 <RiServiceLine size={16} color="cornsilk" />
                 <span>solicitar reserva</span>
               </button>

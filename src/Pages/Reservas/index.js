@@ -1,24 +1,30 @@
 import React from "react";
 import "./style.css";
 import { FaTrashAlt } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 export default function Reservas() {
+  const reserve = useSelector((state) => state.reserve);
+
   return (
     <>
       <div>
         <h1 className="title">Reservas</h1>
-        <h4>Você solicitou 0 reservas</h4>
-        <div className="reservas">
-          <img
-            src="https://sujeitoprogramador.com/wp-content/uploads/2019/12/maceio.jpg"
-            alt="Maceio"
-          />
-          <strong>Viagem Maceió 7 dias</strong>
-          <span>Quantidade: 2</span>
-          <button type="button" onClick={() => {}}>
-            <FaTrashAlt size={16} color="cornsilk" />
-          </button>
-        </div>
+        <h4>Você solicitou {reserve.length} reservas</h4>
+
+        {reserve.map((element) => {
+          console.log(element.title);
+          return (
+            <div className="reservas" key={element.id}>
+              <img src={element.image} alt={element.title} />
+              <strong>{element.title}</strong>
+              <span>Quantidade: {element.amount}</span>
+              <button type="button" onClick={() => {}}>
+                <FaTrashAlt size={16} color="cornsilk" />
+              </button>
+            </div>
+          );
+        })}
       </div>
       <footer>
         <button type="button" onClick={() => {}}>
