@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import api from "../../Services/api";
 import { RiServiceLine } from "react-icons/ri";
 import "./style.css";
-
+import { addReserve } from "../../Store/modules/reservas/actions";
 export default function Home() {
   const dispach = useDispatch();
   const [trips, setTrips] = useState([]);
@@ -18,30 +18,33 @@ export default function Home() {
   }, []);
 
   const addTrip = (trip) => {
-    dispach({
-      type: "ADD_RESERVE",
-      trip,
-    });
+    dispach(addReserve(trip));
   };
 
   return (
     <>
-      <h1>Home</h1>
-      <div className="box">
-        {trips.map((element) => {
-          return (
-            <li key={element.id}>
-              <img src={element.image} alt={element.title} />
+      <div className="containerChoose">
+        <h1>Home</h1>
+        <ul className="box">
+          {trips.map((element) => {
+            return (
+              <li key={element.id}>
+                <img src={element.image} alt={element.title} />
+                <p>
+                  <strong>{element.title}</strong>
+                  <span>
+                    {!!element.status ? "Disponível" : "Indinsponível"}
+                  </span>
+                </p>
 
-              <strong>{element.title}</strong>
-              <span>{!!element.status ? "Disponível" : "Indinsponível"}</span>
-              <button type="button" onClick={() => addTrip(element)}>
-                <RiServiceLine size={16} color="cornsilk" />
-                <span>solicitar reserva</span>
-              </button>
-            </li>
-          );
-        })}
+                <button type="button" onClick={() => addTrip(element)}>
+                  <RiServiceLine size={16} color="cornsilk" />
+                  <span>solicitar reserva</span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </>
   );

@@ -1,7 +1,6 @@
+@import "./reset.css";
+
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   background-color: #242424;
   color: azure;
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
